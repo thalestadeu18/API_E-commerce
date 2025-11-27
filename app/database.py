@@ -1,4 +1,3 @@
-# Arquivo: app/database.py
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
@@ -15,13 +14,22 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# O ERRO ESTAVA AQUI EMBAIXO:
+
 def get_db():
-    # ATENÇÃO: Tem que ter 4 espaços antes de "db ="
+    
+    
+    
+    
     db = SessionLocal()
     try:
-        # 4 espaços aqui também
+        
+        
+        
+        
         yield db
     finally:
-        # 4 espaços aqui também
+        
+        
+        
+    
         db.close()

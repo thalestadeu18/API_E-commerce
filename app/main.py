@@ -1,4 +1,3 @@
-# main.py
 from fastapi import FastAPI
 from controllers import usuario_controller
 from database import Base, engine
