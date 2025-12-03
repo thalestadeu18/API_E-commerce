@@ -1,17 +1,11 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse  # <--- 1. Importe isto
-from controllers import usuario_controller
 from database import Base, engine
+from controllers import produto_controller
 
-# Cria as tabelas no banco automaticamente
+# cria as tabelas
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="API de Usuários - Projeto POO")
+app = FastAPI(title="API de Produtos")
 
-# Inclui as rotas do controller
-app.include_router(usuario_controller.router)
-
-# --- ADICIONE ESTA PARTE NO FINAL ---
-@app.get("/", include_in_schema=False)
-def root():
-    return RedirectResponse(url="/docs")
+# importa as rotas
+app.include_router(produto_controller.router)
