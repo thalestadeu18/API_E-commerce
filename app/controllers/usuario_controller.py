@@ -6,9 +6,9 @@ from services import usuario_service
 router = APIRouter(prefix="/usuarios", tags=["Usuários"])
 
 @router.post("/")
-def criar_usuario(nome: str, email: str, db: Session = Depends(get_db)):
+def criar_usuario(nome: str, cpf: str, senha: str, email: str, db: Session = Depends(get_db)):
     try:
-        usuario = usuario_service.criar_usuario(db, nome, email)
+        usuario = usuario_service.criar_usuario(db, nome, cpf, senha, email)
         return usuario
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))

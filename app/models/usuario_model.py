@@ -7,4 +7,6 @@ class usuario(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(100), nullable=False)
+    CPF = Column(String(11), unique=True, nullable=False)
     email = Column(String(100), unique=True, nullable=False)
+    senha = Column(String(10), unique=True, nullable=False)

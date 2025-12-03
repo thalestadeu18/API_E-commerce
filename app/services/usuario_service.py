@@ -1,7 +1,7 @@
 from models.usuario_model import usuario
 from sqlalchemy.orm import Session
 
-def criar_usuario(db: Session, nome: str, email: str):
+def criar_usuario(db: Session, nome: str, email: str, cpf: str, senha: str):
     
     
     
@@ -13,7 +13,7 @@ def criar_usuario(db: Session, nome: str, email: str):
         raise ValueError("Email já cadastrado!")
     
 # Cria o novo usuário
-    novo_usuario = usuario(nome=nome, email=email)
+    novo_usuario = usuario(nome=nome, email=email, CPF=cpf, senha=senha)
     db.add(novo_usuario)
     db.commit()
     db.refresh(novo_usuario)
