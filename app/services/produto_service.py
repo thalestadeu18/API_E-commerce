@@ -22,6 +22,13 @@ def criar_produto(db: Session, nome: str, valor: float, descricao: str, quantida
 
 def listar_produtos(db: Session):
     return db.query(Produto).all()
+    
+#Daniel: Função para deletar produto
+def deletar_produto(db, produto_id: int):
+    produto = db.query(Produto).filter(Produto.id == produto_id).first()
+    if not produto:
+        return False
+    db.delete(produto)
+    db.commit()
+    return True
 
-def listar_produtos(db: Session):
-    return db.query(Produto).all()
