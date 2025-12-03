@@ -1,0 +1,25 @@
+fastapi
+uvicorn
+sqlalchemy
+
+Para instalar:
+pip install fastapi uvicorn sqlalchemy
+
+no gitbash
+va ate a pasta do projeto:
+ex:cd /c/Users/Usuario/Documents/projetos/gestao_produtos_api
+
+crie um ambiente virtual:
+windows:python -m venv venv
+linux/mac:source venv/bin/activate
+
+
+ative o ambiente virtual:
+source venv/Scripts/activate
+
+entre na pasta app:
+cd app
+
+rode o projeto:
+uvicorn main:app --reload
+
